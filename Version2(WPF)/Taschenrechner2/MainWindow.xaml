@@ -1,0 +1,212 @@
+﻿<Window x:Class="Taschenrechner2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Taschenrechner2"
+        mc:Ignorable="d"
+        Height="400" Width="300"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        Background="Transparent"
+        AllowsTransparency="True">
+
+
+    <Border CornerRadius="20"
+            local:EnableDragHelper.EnableDrag="True">
+        <Border.Background>
+            <RadialGradientBrush RadiusX="0.5" RadiusY="0.5">
+                <GradientStop Color="#000000" Offset="0"/>
+                <GradientStop Color="#111111" Offset="0.5"/>
+                <GradientStop Color="#000000" Offset="1"/>
+            </RadialGradientBrush>
+        </Border.Background>
+        <Grid Margin="0,0,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="75"/>
+                <ColumnDefinition Width="75"/>
+                <ColumnDefinition Width="75"/>
+                <ColumnDefinition Width="75"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="35"/>
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="25"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Grid.ColumnSpan="3"
+                       Text="Taschenrechner" 
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Left"
+                       Margin="10,10,0,0"                    
+                       FontSize="25"
+                       FontFamily="./Fonts/#BebasNeue">
+                <TextBlock.Foreground>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                        <GradientStop Color="Gray" Offset="0.25"/>
+                        <GradientStop Color="DarkGray" Offset="0.75"/>
+                    </LinearGradientBrush>
+                </TextBlock.Foreground>
+            </TextBlock>
+        
+            <TextBlock Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="3"
+                       Text="by Lars Sodomann" 
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Left"
+                       Margin="10,0,0,0"                    
+                       FontSize="15">
+                <TextBlock.Foreground>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                        <GradientStop Color="#1a1a50" Offset="0"/>
+                        <GradientStop Color="#380f5b" Offset="1"/>
+                    </LinearGradientBrush>
+                </TextBlock.Foreground>
+            </TextBlock>
+
+
+
+            <TextBox Grid.ColumnSpan="4" 
+                     VerticalAlignment="Center"
+                     Grid.Row="1"
+                     Margin="10,0,10,0"
+                     x:Name="textBox"
+                     TextChanged="TextBox_TextChanged"
+                     Style="{StaticResource ModernTextbox}"
+                     Height="50"/>
+
+            <StackPanel Grid.Row="2" Grid.RowSpan="1" Grid.Column="3" Grid.ColumnSpan="1">
+                <Button Content="+"
+                        Margin="5"
+                        FontSize="20"
+                        Foreground="#BB86FC"
+                        Click="Button_Click"
+                        Style="{StaticResource ModernButtonOptr}"/>
+            </StackPanel>
+            <StackPanel Grid.Row="3" Grid.RowSpan="1" Grid.Column="3" Grid.ColumnSpan="1">
+                <Button Content="-"
+                        Margin="5"
+                        FontSize="20"
+                        Foreground="#BB86FC"
+                        Click="Button_Click"
+                        Style="{StaticResource ModernButtonOptr}"/>
+            </StackPanel>
+            <StackPanel Grid.Row="4" Grid.RowSpan="1" Grid.Column="3">
+                <Button Content="*"
+                        Margin="5"
+                        FontSize="20"
+                        Foreground="#BB86FC"
+                        Click="Button_Click"
+                        Style="{StaticResource ModernButtonOptr}"/>
+            </StackPanel>
+            <StackPanel Grid.Row="5" Grid.RowSpan="2" Grid.Column="3">
+                <Button Content="/"
+                        Margin="5"
+                        FontSize="20"
+                        Foreground="#BB86FC"
+                        Click="Button_Click"
+                        Style="{StaticResource ModernButtonOptr}"/>
+            </StackPanel>
+            <StackPanel Grid.Row="2" Grid.RowSpan="1" Grid.Column="0" Grid.ColumnSpan="1">
+                <Button Content="7"
+                        Margin="5"
+                        FontSize="20"
+                        Foreground="#BB86FC"
+                        x:Name="button"
+                        Click="Button_Click"
+                        Style="{StaticResource ModernButton}"/>
+            </StackPanel>
+            <StackPanel Grid.Row="2" Grid.RowSpan="1" Grid.Column="1" Grid.ColumnSpan="1">
+                <Button Content="8"
+                        Margin="5"
+                        FontSize="20"
+                        Foreground="#BB86FC"
+                        Click="Button_Click"
+                        Style="{StaticResource ModernButton}"/>
+            </StackPanel>
+            <StackPanel Grid.Row="2" Grid.RowSpan="1" Grid.Column="2">
+                <Button Content="9"
+                        Margin="5"
+                        FontSize="20"
+                        Foreground="#BB86FC"
+                        Click="Button_Click"
+                        Style="{StaticResource ModernButton}"/>
+            </StackPanel>
+            <StackPanel Grid.Row="3" Grid.RowSpan="1" Grid.Column="0" Grid.ColumnSpan="1">
+                <Button Content="4"
+                        Margin="5"
+                        FontSize="20"
+                        Foreground="#BB86FC"
+                        Click="Button_Click"
+                        Style="{StaticResource ModernButton}"/>
+            </StackPanel>
+            <StackPanel Grid.Row="3" Grid.RowSpan="1" Grid.Column="1" Grid.ColumnSpan="1">
+                <Button Content="5"
+                        Margin="5"
+                        FontSize="20"
+                        Foreground="#BB86FC"
+                        Click="Button_Click"
+                        Style="{StaticResource ModernButton}"/>
+            </StackPanel>
+            <StackPanel Grid.Row="3" Grid.RowSpan="1" Grid.Column="2">
+                <Button Content="6"
+                        Margin="5"
+                        FontSize="20"
+                        Foreground="#BB86FC"
+                        Click="Button_Click"
+                        Style="{StaticResource ModernButton}"/>
+            </StackPanel>
+            <StackPanel Grid.Row="4" Grid.RowSpan="1" Grid.Column="0" Grid.ColumnSpan="1">
+                <Button Content="1"
+                        Margin="5"
+                        FontSize="20"
+                        Foreground="#BB86FC"
+                        Click="Button_Click"
+                        Style="{StaticResource ModernButton}"/>
+            </StackPanel>
+            <StackPanel Grid.Row="4" Grid.RowSpan="1" Grid.Column="1" Grid.ColumnSpan="1">
+                <Button Content="2"
+                        Margin="5"
+                        FontSize="20"
+                        Foreground="#BB86FC"
+                        Click="Button_Click"
+                        Style="{StaticResource ModernButton}"/>
+            </StackPanel>
+            <StackPanel Grid.Row="4" Grid.RowSpan="1" Grid.Column="2">
+                <Button Content="3"
+                        Margin="5"
+                        FontSize="20"
+                        Foreground="#BB86FC"
+                        Click="Button_Click"
+                        Style="{StaticResource ModernButton}"/>
+            </StackPanel>
+            <StackPanel Grid.Row="5" Grid.RowSpan="2" Grid.Column="1" Grid.ColumnSpan="1">
+                <Button Content="0"
+                        Margin="5"
+                        FontSize="20"
+                        Foreground="#BB86FC"
+                        Click="Button_Click"
+                        Style="{StaticResource ModernButton}"/>
+            </StackPanel>
+            <StackPanel Grid.Row="5" Grid.RowSpan="2" Grid.Column="0" Grid.ColumnSpan="1">
+                <Button Content="C"
+                        Margin="5"
+                        FontSize="20"
+                        Foreground="#BB86FC"
+                        Click="BtnClear_Click"
+                        Style="{StaticResource ModernButtonClear}"/>
+            </StackPanel>
+            <StackPanel Grid.Row="5" Grid.RowSpan="2" Grid.Column="2">
+                <Button Content="="
+                        Margin="5"
+                        FontSize="20"
+                        Foreground="#BB86FC"
+                        Click="BtnEqual_Click"
+                        Style="{StaticResource ModernButtonEqual}"/>
+            </StackPanel>
+        </Grid>
+    </Border>
+</Window>
